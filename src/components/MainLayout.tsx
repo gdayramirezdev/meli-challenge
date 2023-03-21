@@ -1,4 +1,5 @@
 import React from "react";
+import { Header } from "./Header";
 
 interface MainLayoutProps {
   children?:
@@ -9,6 +10,7 @@ interface MainLayoutProps {
 export function MainLayout ({ children }: MainLayoutProps): React.ReactElement<any> {
   return (
     <main>
+      <Header />
       {children}
     </main>
   );
