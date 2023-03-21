@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+@mixin media-xs {
+  @media (max-width: $xs-max) { @content; }
+}
+
+@mixin media-sm {
+  @media (min-width: $sm-min) and (max-width: $sm-max){ @content; }
+}
+
+@mixin media-md {
+  @media (min-width: $md-min) and (max-width: $md-max) { @content; }
+}
+
+@mixin media-lg {
+  @media (min-width: $lg-min) and (max-width: $lg-max) { @content; }
+}
+
+@mixin media-lgx {
+  @media (min-width: $xlg-min) { @content; }
+}

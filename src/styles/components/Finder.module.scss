@@ -1,6 +1,7 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
-.header{
+.header {
   margin: auto;
 
   .finder {
@@ -19,6 +20,16 @@
       height: 34px;
       text-align: center;
       border: none;
+    }
+  }
+}
+
+@include media-xs {
+  .header {
+    .finder {
+      .searchInput {
+        width: 100%;
+      }
     }
   }
 }
