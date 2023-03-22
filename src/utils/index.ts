@@ -21,3 +21,8 @@ export function addProductJsonLd(item: Item) {
 `,
   };
 }
+
+export const priceFormatter = new Intl.NumberFormat('es-AR', {
+  style: 'currency',
+  currency: 'ARS',
+});

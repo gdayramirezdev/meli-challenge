@@ -1,5 +1,6 @@
 import { Conditions } from "@/constants";
 import { Item } from "@/types";
+import { priceFormatter } from "@/utils";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import styles from '../styles/components/ItemList.module.scss';
@@ -13,11 +14,6 @@ export const ItemList: React.FunctionComponent<Item> = ({
   title
 }) => {
   const router = useRouter();
-  const priceFormatter = new Intl.NumberFormat('es-AR', {
-    style: 'currency',
-    currency: 'ARS',
-  });
-
   const onSelect = () => {
     router.push({
       pathname: '/items/[id]',

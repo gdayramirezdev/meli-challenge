@@ -1,5 +1,5 @@
 import { Item } from '@/types';
-import { addProductJsonLd } from '@/utils';
+import { addProductJsonLd, priceFormatter } from '@/utils';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/components/SummaryProduct.module.scss';
@@ -14,11 +14,6 @@ export const SummaryProduct: React.FunctionComponent<Item> = ({
   sold_quantity,
   free_shipping,
 }) => {
-  const priceFormatter = new Intl.NumberFormat('es-AR', {
-    style: 'currency',
-    currency: 'ARS',
-  });
-
   const onBuy = async (id: string): Promise<void> => {
     //Action to buy product
   };
