@@ -8,7 +8,9 @@ export default class ApiService {
       return data;
     } catch (error) {
       console.warn(error);
-      return {}
+      return {
+        showError: true
+      }
     }
   }
 
@@ -19,7 +21,9 @@ export default class ApiService {
       return data;
     } catch (error) {
       console.warn(error);
-      return {}
+      return {
+        showError: true
+      }
     }
   }
 }
