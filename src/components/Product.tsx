@@ -24,6 +24,7 @@ export const SummaryProduct: React.FunctionComponent<Item> = ({
     <section className={styles.summary}>
       <div className={styles.product}>
         <Image
+          className={styles.picture}
           src={picture}
           width='300'
           height='400'
