@@ -12,3 +12,5 @@ export const Breadcumb: React.FunctionComponent<{ categories: string[] }> = ({
 
   return <section className={styles.categories}>{categoriesList}</section>;
 };
+
+export default Breadcumb;

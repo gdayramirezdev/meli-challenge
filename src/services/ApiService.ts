@@ -7,7 +7,7 @@ export default class ApiService {
       const data = response.data;
       return data;
     } catch (error) {
-      console.log(error);
+      console.warn(error);
       return {}
     }
   }
@@ -18,6 +18,7 @@ export default class ApiService {
       const data = response.data;
       return data;
     } catch (error) {
+      console.warn(error);
       return {}
     }
   }

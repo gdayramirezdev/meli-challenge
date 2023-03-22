@@ -8,7 +8,7 @@ interface MainLayoutProps {
   initialSearch: string;
 }
 
-export function MainLayout ({ children, initialSearch }: MainLayoutProps): React.ReactElement<any> {
+export default function MainLayout ({ children, initialSearch }: MainLayoutProps): React.ReactElement<any> {
   return (
     <main>
       <Header initialSearch={initialSearch}/>

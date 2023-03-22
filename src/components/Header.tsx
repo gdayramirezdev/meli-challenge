@@ -1,5 +1,5 @@
 import React from 'react';
-import { Finder } from '@/components';
+import Finder from '@/components/Finder';
 import Image from 'next/image';
 
 import styles from '../styles/components/Header.module.scss';

@@ -1,4 +1,4 @@
-import { MainLayout } from '@/components'
+import MainLayout from '@/components/MainLayout'
 import SummaryProduct from '@/components/Product';
 import ApiService from '@/services/ApiService';
 import { Autor, Item } from '@/types';
@@ -9,7 +9,6 @@ type SummaryItemProps = {
 };
 
 export const SummaryItem: React.FunctionComponent<SummaryItemProps> = ({item, autor}) => {
-  console.log(item);
   return (
       <MainLayout initialSearch={''}>
         <SummaryProduct {...item}/>

@@ -1,5 +1,5 @@
-import { MainLayout } from '@/components';
-import { Breadcumb } from '@/components/Breadcumb';
+import MainLayout from '@/components/MainLayout';
+import Breadcumb from '@/components/Breadcumb';
 import Results from '@/components/Results';
 import ApiService from '@/services/ApiService';
 import { Autor, Item } from '@/types';
