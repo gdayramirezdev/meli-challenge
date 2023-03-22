@@ -56,11 +56,9 @@
       border: none;
     }
   }
-
 }
 
-
-@include media-lg {
+@include media-md {
   .summary {
     width: 800px;
     flex-direction: row;
