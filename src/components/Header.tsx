@@ -4,7 +4,11 @@ import Image from 'next/image';
 
 import styles from '../styles/components/Header.module.scss';
 
-export const Header: React.FunctionComponent = () => {
+type HeaderProps = {
+  initialSearch: string
+};
+
+export const Header: React.FunctionComponent<HeaderProps> = ({initialSearch}) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -16,7 +20,7 @@ export const Header: React.FunctionComponent = () => {
         />
       </div>
       <div className={styles.finder}>
-        <Finder />
+        <Finder initialSearch={initialSearch}/>
       </div>
     </header>
   );

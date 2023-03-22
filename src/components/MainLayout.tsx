@@ -5,12 +5,13 @@ interface MainLayoutProps {
   children?:
   | React.ReactElement
   | React.ReactElement[];
+  initialSearch: string;
 }
 
-export function MainLayout ({ children }: MainLayoutProps): React.ReactElement<any> {
+export function MainLayout ({ children, initialSearch }: MainLayoutProps): React.ReactElement<any> {
   return (
     <main>
-      <Header />
+      <Header initialSearch={initialSearch}/>
       {children}
     </main>
   );

@@ -1,13 +1,19 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../styles/components/Finder.module.scss';
 
-export const Finder: React.FunctionComponent = () => {
+type FinderProps = {
+  initialSearch: string;
+};
+
+export const Finder: React.FunctionComponent<FinderProps> = ({initialSearch}) => {
   const [search, setSearch] = useState('');
 
   const onChange = (e: React.FormEvent<HTMLInputElement>) => {
     setSearch(e.currentTarget.value);
   };
+
+  useEffect(()=> setSearch(initialSearch), [initialSearch])
 
   return (
     <>
