@@ -2,14 +2,11 @@ import { MainLayout } from '@/components';
 import { Breadcumb } from '@/components/Breadcumb';
 import Results from '@/components/Results';
 import ApiService from '@/services/ApiService';
-import { Item } from '@/types';
+import { Autor, Item } from '@/types';
 import { useRouter } from 'next/router'
 
 interface ItemsProps {
-  autor: {
-    name: string;
-    lastname: string;
-  };
+  autor: Autor;
   categories: string[];
   items: Item[];
 }

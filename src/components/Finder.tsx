@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/components/Finder.module.scss';
 
@@ -8,12 +9,20 @@ type FinderProps = {
 
 export const Finder: React.FunctionComponent<FinderProps> = ({initialSearch}) => {
   const [search, setSearch] = useState('');
-
+  const router = useRouter(); 
   const onChange = (e: React.FormEvent<HTMLInputElement>) => {
     setSearch(e.currentTarget.value);
   };
 
-  useEffect(()=> setSearch(initialSearch), [initialSearch])
+  useEffect(()=> setSearch(initialSearch), [initialSearch]);
+
+  const onSearch = (): void => {
+    if (search) 
+      router.push({
+        pathname: '/items',
+        query: { search },
+      })
+  };
 
   return (
     <>
@@ -26,7 +35,7 @@ export const Finder: React.FunctionComponent<FinderProps> = ({initialSearch}) =>
             onChange={onChange}
             placeholder='Nunca dejes de buscar'
           />
-          <button type='button' className={styles.searchButton}>
+          <button type='button' className={styles.searchButton} onClick={onSearch} disabled={Boolean(!search)}>
             <Image
               src='/search.svg'
               alt='Search Icon'

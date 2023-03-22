@@ -1,7 +1,7 @@
 import { Item } from "@/types";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from '../styles/components/ItemList.module.scss';
-
 
 export const ItemList: React.FunctionComponent<Item> = ({
   id,
@@ -11,13 +11,21 @@ export const ItemList: React.FunctionComponent<Item> = ({
   free_shipping,
   title
 }) => {
+  const router = useRouter();
   const priceFormatter = new Intl.NumberFormat('es-AR', {
     style: 'currency',
     currency: 'ARS',
   });
 
+  const onSelect = () => {
+    router.push({
+      pathname: '/items/[id]',
+      query: { id },
+    })  
+  };
+
   return (
-    <div className={styles.item}>
+    <div className={styles.item} onClick={onSelect}>
       <Image
         src={picture}
         alt={title}

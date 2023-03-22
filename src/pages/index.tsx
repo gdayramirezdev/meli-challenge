@@ -9,7 +9,7 @@ export default function Home() {
         <meta name="description" content="Buscador de productos" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <MainLayout />
+      <MainLayout initialSearch='' />
     </>
   )
 }

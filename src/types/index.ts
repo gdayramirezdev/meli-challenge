@@ -9,4 +9,11 @@ export type Item = {
     decimals: number;
   };
   title: string;
+  description: string;
+  sold_quantity: number;
+};
+
+export type Autor = {
+  name: string;
+  lastname: string;
 };
