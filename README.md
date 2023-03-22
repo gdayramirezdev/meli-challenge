@@ -1,6 +1,6 @@
-# Mercado Libre Challenge
+# Mercado Libre Challenge Front End
 ## Getting Started
-
+> Requerimientos: HTML, JS (React, deseable utilizar algún framework SSR),CSS (Deseable utilizar Sass).
 #### Runs
 
 ```bash
