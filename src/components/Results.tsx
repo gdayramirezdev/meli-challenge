@@ -8,7 +8,11 @@ type ResultsProps = {
 
 export const Results: React.FunctionComponent<ResultsProps> = ({ items }) => {
   const itemList = items.map((item) => (
-    <ItemList {...item} key={item.id}/>
+    <div key={item.id}>
+      <ItemList {...item} />
+      <div className={styles.divider}/>
+    </div>
+   
   ));
 
   return (

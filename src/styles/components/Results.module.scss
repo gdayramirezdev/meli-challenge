@@ -5,10 +5,16 @@
   margin: 10px auto;
   background-color: $white-color;
   padding: 20px;
+
+  .divider {
+    border: 0;
+    border-top: 0.1px solid $gray-color-3;
+  }
 }
 
 @include media-md {
  .items {
     width: 800px;
+    border: 1px;
  }
 }

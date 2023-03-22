@@ -1,5 +1,5 @@
 export type Item = {
-  condition: string;
+  condition: 'used' | 'new';
   free_shipping: boolean;
   id: string;
   picture: string;

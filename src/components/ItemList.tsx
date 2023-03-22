@@ -1,3 +1,4 @@
+import { Conditions } from "@/constants";
 import { Item } from "@/types";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -34,7 +35,7 @@ export const ItemList: React.FunctionComponent<Item> = ({
         className={styles.picture}
       />
       <div className={styles.summary}>
-        <span>
+        <h2 className={styles.price}>
           {priceFormatter.format(price.amount)}
           {free_shipping && (
             <Image 
@@ -45,11 +46,10 @@ export const ItemList: React.FunctionComponent<Item> = ({
               className={styles.logoShipping}
             />
             )}
-        </span>
-        <span>{title}</span>
-        <span>{condition}</span>
+        </h2>
+        <h3 className={styles.title}>{title}</h3>
+        <span className={styles.condition}>{Conditions[condition] || condition}</span>
       </div>
-      <div className={styles.divider} />
     </div>
   );
 }
