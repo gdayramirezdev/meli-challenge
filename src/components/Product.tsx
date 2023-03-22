@@ -1,4 +1,6 @@
 import { Item } from '@/types';
+import { addProductJsonLd } from '@/utils';
+import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/components/SummaryProduct.module.scss';
 
@@ -9,7 +11,8 @@ export const SummaryProduct: React.FunctionComponent<Item> = ({
   price,
   title,
   description,
-  sold_quantity
+  sold_quantity,
+  free_shipping,
 }) => {
   const priceFormatter = new Intl.NumberFormat('es-AR', {
     style: 'currency',
@@ -22,6 +25,28 @@ export const SummaryProduct: React.FunctionComponent<Item> = ({
 
   return (
     <section className={styles.summary}>
+      <Head>
+        <title>{title}</title>
+        <meta
+          name="description"
+          content={description}
+          key="desc"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addProductJsonLd({
+            id,
+            condition,
+            picture,
+            price,
+            title,
+            description,
+            sold_quantity,
+            free_shipping,
+          })}
+          key="product-jsonld"
+        />
+      </Head>
       <div className={styles.product}>
         <Image
           className={styles.picture}
