@@ -1,8 +1,14 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
 .items {
-  width: 800px;
   margin: 10px auto;
   background-color: $white-color;
   padding: 20px;
+}
+
+@include media-md {
+ .items {
+    width: 800px;
+ }
 }

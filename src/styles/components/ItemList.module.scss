@@ -1,9 +1,10 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
 .item {
   margin: 30px auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   cursor: pointer;
@@ -22,4 +23,10 @@
       margin-left: 10px;
     }
   }
+}
+
+@include media-md {
+ .item {
+  flex-direction: row;
+ }
 }

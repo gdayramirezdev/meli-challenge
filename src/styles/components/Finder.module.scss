@@ -9,7 +9,6 @@
     display: flex;
 
     .searchInput {
-      width: 300px;
       border: none;
       padding: 5px;
       height: 24px;
@@ -20,6 +19,16 @@
       height: 34px;
       text-align: center;
       border: none;
+    }
+  }
+}
+
+@include media-md {
+  .header {
+    .finder {
+      .searchInput {
+        width: 300px;
+      }
     }
   }
 }
